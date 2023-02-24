@@ -1,6 +1,6 @@
 <form [formGroup]="mathForm">
     {{ a }} + {{ b }} = 
-    <input formControlName="answer" />
+    <input appAnswerHighlight formControlName="answer" />
 </form>
 <div>
     {{ secondsPerSolution }} average time taken to solve answers.
