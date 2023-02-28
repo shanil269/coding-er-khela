@@ -1,1 +1,12 @@
-<p>signup works!</p>
+<h3>--Create an account--</h3>
+<form [formGroup]="authForm">
+    <div>
+        <input formControlName="username" placeholder="username"/>
+    </div>
+    <div>
+        <input formControlName="password" placeholder="enter password">
+    </div>
+    <div>
+        <input formControlName="passwordConfirmation" placeholder=" Re-enter password">
+    </div>
+</form>
