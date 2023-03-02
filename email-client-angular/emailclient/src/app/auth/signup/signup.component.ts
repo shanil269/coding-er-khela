@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AsyncValidator, AsyncValidatorFn } from '@angular/forms';
 import { MatchPassword } from '../validators/match-password';
 import { UniqueUsername } from '../validators/unique-username';
 
@@ -15,9 +15,9 @@ export class SignupComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^[a-z0-9]+$/)
-    ], 
+    ],
     [
-      this.uniqueUsername.validate
+      this.uniqueUsername.validate as AsyncValidatorFn
     ]),
     password: new FormControl('', [
       Validators.required,
@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
       Validators.minLength(4),
       Validators.maxLength(20)
     ])
-  }, { validators: [this.matchPassword.validate]})
+  }, { validators: [this.matchPassword.validate ]})
   constructor(
     private matchPassword: MatchPassword,
     private uniqueUsername: UniqueUsername

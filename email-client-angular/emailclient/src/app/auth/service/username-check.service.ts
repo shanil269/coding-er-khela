@@ -7,7 +7,8 @@ import { catchError, map, of } from 'rxjs';
 })
 export class UsernameCheckService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
   search(value: string) {
     return this.http.post<any>('https://api.angular-email.com/auth/username', {
@@ -19,8 +20,8 @@ export class UsernameCheckService {
         }
       }),
       catchError(err => {
-        if(err.message.username) {
-          return of({ onUniqueusername: true })
+        if(err.error.username) {
+          return of({ noUniqueusername: true })
         }
         else{
           return of({ noConnection: true })
