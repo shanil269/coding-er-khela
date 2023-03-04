@@ -16,9 +16,9 @@ export class SignupComponent implements OnInit {
       Validators.maxLength(20),
       Validators.pattern(/^[a-z0-9]+$/)
     ],
-    [
-      this.uniqueUsername.validate as AsyncValidatorFn
-    ]),
+      [
+        this.uniqueUsername.validate as AsyncValidatorFn
+      ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
@@ -29,11 +29,11 @@ export class SignupComponent implements OnInit {
       Validators.minLength(4),
       Validators.maxLength(20)
     ])
-  }, { validators: [this.matchPassword.validate ]})
+  }, { validators: [this.matchPassword.validate] })
   constructor(
     private matchPassword: MatchPassword,
     private uniqueUsername: UniqueUsername
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }
