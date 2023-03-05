@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, AsyncValidator, AsyncValidatorFn } 
 import { MatchPassword } from '../validators/match-password';
 import { UniqueUsername } from '../validators/unique-username';
 import { SignupService } from '../service/signup.service';
+import { SignupCredentials } from '../service/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -44,7 +45,7 @@ export class SignupComponent implements OnInit {
     if (this.authForm.invalid) {
       return
     }
-    console.log(this.signupService.createAccount(this.authForm.value).subscribe(response => response))
+    console.log(this.signupService.createAccount(this.authForm.value as SignupCredentials).subscribe(response => response))
   }
 
 }
