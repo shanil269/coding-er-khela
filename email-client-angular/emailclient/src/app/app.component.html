@@ -15,7 +15,8 @@
                 <a routerLink="/" routerLinkActive="active" class="flex items-center">
                     Inbox
                 </a>
-                <a routerLink="/signout" routerLinkActive="active" class="flex items-center">
+                <a routerLink="/signout" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    class="flex items-center">
                     Sign Out
                 </a>
             </ng-container>
