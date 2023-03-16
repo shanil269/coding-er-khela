@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AsyncValidator, AsyncValidatorFn } from '@angular/forms';
 import { MatchPassword } from '../validators/match-password';
 import { UniqueUsername } from '../validators/unique-username';
-import { SignupService } from '../service/signup.service';
-import { SignupCredentials } from '../service/signup.service';
+// import { SignupService } from '../service/signup.service';
+// import { SignupCredentials } from '../service/signup.service';
+import { AuthService } from '../service/auth.service';
+import { SignupCredentials } from '../service/auth.service'
 
 @Component({
   selector: 'app-signup',
@@ -35,7 +37,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private matchPassword: MatchPassword,
     private uniqueUsername: UniqueUsername,
-    private signupService: SignupService
+    private signup: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +47,7 @@ export class SignupComponent implements OnInit {
     if (this.authForm.invalid) {
       return
     }
-    this.signupService.createAccount(this.authForm.value as SignupCredentials).subscribe({
+    this.signup.signup(this.authForm.value as SignupCredentials).subscribe({
       next: response => {
         // Route to another component.
       },
