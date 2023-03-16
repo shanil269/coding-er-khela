@@ -10,6 +10,7 @@ import {
 @Injectable()
 export class AuthHttpIntercepter implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        throw new Error("Method not implemented.")
+        console.log(req)
+        return next.handle(req)
     }
 }
