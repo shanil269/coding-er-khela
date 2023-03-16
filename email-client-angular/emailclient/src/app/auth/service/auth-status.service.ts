@@ -10,9 +10,7 @@ export class AuthStatusService {
   constructor(private http: HttpClient) { }
 
   checkAuth() {
-    return this.http.get('https://api.angular-email.com/auth/signedin', {
-      withCredentials: true
-    }).pipe(
+    return this.http.get('https://api.angular-email.com/auth/signedin').pipe(
       tap(response => {
         console.log(response)
       })

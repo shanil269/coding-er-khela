@@ -10,7 +10,9 @@ import {
 @Injectable()
 export class AuthHttpIntercepter implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log(req)
-        return next.handle(req)
+        const modifiedReq = req.clone({
+            withCredentials: true
+        })
+        return next.handle(modifiedReq)
     }
 }

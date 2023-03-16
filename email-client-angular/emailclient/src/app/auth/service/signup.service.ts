@@ -21,9 +21,7 @@ export class SignupService {
   constructor(private http: HttpClient) { }
 
   createAccount(credentials: SignupCredentials) {
-    return this.http.post<SignupResponse>('https://api.angular-email.com/auth/signup', credentials, {
-      withCredentials: true
-    }).pipe(
+    return this.http.post<SignupResponse>('https://api.angular-email.com/auth/signup', credentials).pipe(
       tap(() => {
         this.signedin$.next(true)
       }))
