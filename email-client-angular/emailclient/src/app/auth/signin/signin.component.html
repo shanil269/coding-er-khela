@@ -3,7 +3,7 @@
         <div class="flex items-center justify-center text-2xl font-serif text-black font-bold">
             Sign In
         </div>
-        <form [formGroup]="authForm">
+        <form (ngSubmit)="onSubmit()" [formGroup]="authForm">
             <app-input inputType="text" placeholderValue="enter username" label="Username"
                 [control]="authForm.controls.username"></app-input>
             <app-input inputType="password" placeholderValue="enter password" label="Password"
