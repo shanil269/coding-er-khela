@@ -21,10 +21,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.authStatus.checkAuth().subscribe(() => { })
-
-    setTimeout(() => {
-      this.authStatus.signout().subscribe(() => { })
-    }, 5000)
   }
 
 }
