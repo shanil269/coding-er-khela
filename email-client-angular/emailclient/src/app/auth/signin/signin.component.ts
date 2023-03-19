@@ -33,7 +33,22 @@ export class SigninComponent implements OnInit {
       return
     }
 
-    this.authService.signin(this.authForm.value as SigninCredentials).subscribe(() => { })
+    this.authService.signin(this.authForm.value as SigninCredentials).subscribe({
+      next: response => {
+
+      },
+      error: (err) => {
+        if (!err.status) {
+          this.authForm.setErrors({
+            noConnection: true
+          })
+        } else if (err.error.username || err.error.password) {
+          this.authForm.setErrors({
+            invalidCredentials: true
+          })
+        }
+      }
+    })
   }
 
 }
