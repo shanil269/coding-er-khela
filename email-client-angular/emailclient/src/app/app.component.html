@@ -12,7 +12,7 @@
         </div>
         <div class="flex flex-row space-x-10 px-2 py-2 mr-10">
             <ng-container *ngIf="(signedin$ | async)">
-                <a routerLink="/" routerLinkActive="active" class="flex items-center">
+                <a routerLink="inbox" routerLinkActive="active" class="flex items-center">
                     Inbox
                 </a>
                 <a routerLink="/signout" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
