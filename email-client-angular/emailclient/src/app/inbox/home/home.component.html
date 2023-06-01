@@ -1,9 +1,19 @@
 <div class="flex flex-row gap-8">
-    <div class="w-72 m-2 border-2 rounded">
-        <app-email-index></app-email-index>
+    <div class="w-72 h-[calc(100vh-70px)] border-2 rounded m-2">
+        <div class="flex items-center justify-center">
+            <div class="mt-3 w-56 h-10 text-white bg-gradient-to-r from-cyan-500 to-blue-500
+                font-medium rounded-lg text-sm flex items-center justify-center">
+                <button type="button" class="">Compose</button>
+            </div>
+        </div>
+        <div class="w-64 mt-5 mb-5 overflow-y-hidden">
+            <app-email-index></app-email-index>
+        </div>
     </div>
-    <div class="w-[calc(100vw)] bg-slate-500">
-        <router-outlet></router-outlet>
+    <div class="flex items-center justify-center">
+        <div class="w-[calc(100vw-380px)] h-5/6 border-2 rounded">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 
 </div>
