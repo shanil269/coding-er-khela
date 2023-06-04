@@ -1,8 +1,8 @@
 <div class="p-2 flex flex-col">
     <div class="border-b-2" *ngFor="let email of emails">
         <a [routerLink]="email.id" routerLinkActive="active">
-            <p class="font-bold">{{email.subject}}</p>
-            <p class="overflow-x-scroll">{{email.from}}</p>
+            <p class="font-bold trim">{{email.subject}}</p>
+            <p class="trim">{{email.from}}</p>
         </a>
     </div>
 </div>

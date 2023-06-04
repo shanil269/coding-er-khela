@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AsyncValidator, FormControl } from "@angular/forms";
 import { catchError, map, of } from 'rxjs';
-// import { UsernameCheckService } from "../service/username-check.service";
 import { AuthService } from "../service/auth.service";
 
 @Injectable({ providedIn: 'root' })
