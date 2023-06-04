@@ -1,1 +1,17 @@
-<p>modal works!</p>
+<div (click)="onDismissClick()" class="" id="defaultModal">
+    <div (click)="$event.stopPropagation()" class="">
+        <i class="" (click)="onDismissClick()"></i>
+        <div class="">
+            <ng-content select="[modalTitle]"></ng-content>
+        </div>
+        <div class="">
+            <ng-content></ng-content>
+        </div>
+        <div class="actions actions-default">
+            <button (click)="onDismissClick()" class="">Ok</button>
+        </div>
+        <div class="actions">
+            <ng-content select="[modalFooter]"></ng-content>
+        </div>
+    </div>
+</div>
