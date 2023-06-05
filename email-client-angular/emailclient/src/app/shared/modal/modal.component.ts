@@ -7,6 +7,7 @@ import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/co
 })
 export class ModalComponent implements OnInit {
   @Output() dismiss = new EventEmitter()
+  showModal = true;
 
   constructor(private el: ElementRef) { }
 
