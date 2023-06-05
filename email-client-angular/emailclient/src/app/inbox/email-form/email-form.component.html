@@ -1,1 +1,10 @@
-<p>email-form works!</p>
+<form action="" [formGroup]="emailForm">
+    <app-input [control]="emailForm.get('to')" inputType="email" label="To">
+    </app-input>
+    <app-input [control]="emailForm.get('from')" inputType="email" label="From">
+    </app-input>
+    <app-input [control]="emailForm.get('subject')" inputType="text" label="Subject">
+    </app-input>
+    <app-input [control]="emailForm.get('text')" inputType="text" label="Content">
+    </app-input>
+</form>
