@@ -11,6 +11,7 @@ export class InputComponent implements OnInit {
   @Input() control!: FormControl | any
   @Input() inputType!: string
   @Input() placeholderValue!: string
+  @Input() controlType = 'input'
 
 
 
