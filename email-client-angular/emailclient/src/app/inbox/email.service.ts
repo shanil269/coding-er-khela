@@ -16,9 +16,12 @@ export class EmailService {
   constructor(private http: HttpClient) { }
 
   getEmails() {
-    return this.http.get<EmailService[]>(`${this.rootUrl}/emails`);
+    return this.http.get<EmailSummary[]>(`${this.rootUrl}/emails`);
   }
   getEmail(id: string) {
     return this.http.get<Email>(`${this.rootUrl}/emails/${id}`)
+  }
+  sendEmail(email: Email) {
+    return this.http.post(`${this.rootUrl}/emails`, email)
   }
 }
