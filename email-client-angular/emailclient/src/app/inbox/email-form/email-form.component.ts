@@ -24,4 +24,13 @@ export class EmailFormComponent implements OnInit {
     })
   }
 
+  onSubmit() {
+    if (this.emailForm.invalid) {
+      console.log("Form invalid");
+
+      return
+    }
+    console.log(this.emailForm.getRawValue())
+  }
+
 }
